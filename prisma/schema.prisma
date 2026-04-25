@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model room_enviroments {
+  id Int @id @default(autoincrement())
+  timestamp DateTime @default(now())
+  temperature Float
+  humidity Float
+  pressure Float
+}
+
+model enviroments {
+  id Int @id @default(autoincrement())
+  timestamp DateTime @default(now())
+  temperature Float
+  humidity Float
+  pressure Float
+}
